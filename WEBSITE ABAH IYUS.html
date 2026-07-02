@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ayam Goreng Abah Iyus - Makanan Sunda Legendaris</title>
+    <link rel="stylesheet" href="style - Copy (1).css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+
+<body>
+    <header>
+        <nav class="navbar">
+            <div class="nav-container">
+                <div class="logo">
+                    <img src="logo (1).png">
+                    <span>Abah Iyus</span>
+                </div>
+                <ul class="nav-menu">
+                    <li><a href="#home">Beranda</a></li>
+                    <li><a href="#tentang">Tentang</a></li>
+                    <li><a href="#menu">Menu</a></li>
+                    <li><a href="#pesan">Pesan</a></li>
+                    <li><a href="#maps">Maps</a></li>
+                    <li><a href="#cart" class="cart-btn"><i class="fas fa-shopping-cart"></i> Keranjang (<span
+                                id="cart-count">0</span>)</a></li>
+                </ul>
+                <div class="hamburger">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <section id="home" class="hero">
+        <div class="hero-content">
+            <h1>Ayam Goreng Abah Iyus</h1>
+            <p>Rasa Sunda autentik dalam setiap gigitan. Ayam goreng kampung bumbu rahasia, jeroan empuk, dan aneka lauk
+                khas Sunda.</p>
+            <a href="#menu" class="cta-btn">Pesan Sekarang</a>
+        </div>
+    </section>
+
+    <section id="tentang" class="about">
+        <div class="container">
+            <h2>Tentang Abah Iyus</h2>
+            <div class="about-grid">
+                <div class="about-text">
+                    <p>Sejak tahun 1985, Ayam Goreng Abah Iyus telah menjadi ikon kuliner Sunda di kota Bandung. Dengan
+                        resep turun-temurun, kami menyajikan ayam kampung goreng dengan bumbu rahasia yang krispi di
+                        luar, juicy di dalam.</p>
+                    <p>Jeroan segar, sambal pedas, lalapan lengkap, dan aneka masakan Sunda lainnya siap menggugah
+                        selera Anda.</p>
+                </div>
+                <div class="about-image">
+                    <i class="fas fa-utensils"></i>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="menu" class="menu">
+        <div class="container">
+            <h2>Menu Pilihan</h2>
+            <div class="menu-grid" id="menu-grid">
+                
+            </div>
+        </div>
+    </section>
+
+    <section id="cart" class="cart">
+        <div class="container">
+            <h2>Keranjang Belanja</h2>
+            <div id="cart-items"></div>
+            <div class="cart-total">
+                <div>Total: Rp <span id="total-price">0</span></div>
+                <div style="margin-top: 0.75rem; font-size: 0.95rem; color: #666;" id="cart-subnote"></div>
+            </div>
+            <button class="checkout-btn" id="checkout-btn" style="display: none;">Lanjut ke Pembayaran</button>
+        </div>
+    </section>
+
+
+
+
+    <section id="pesan" class="order-process">
+        <div class="container">
+            <h2>Cara Pemesanan</h2>
+            <div class="steps">
+                <div class="step">
+                    <div class="step-icon">1</div>
+                    <h3>Pilih Menu</h3>
+                    <p>Pilih menu favorit Anda dan tambahkan ke keranjang</p>
+                </div>
+                <div class="step">
+                    <div class="step-icon">2</div>
+                    <h3>Hitung Total</h3>
+                    <p>Lihat ringkasan belanja dan hitung total harga</p>
+                </div>
+                <div class="step">
+                    <div class="step-icon">3</div>
+                    <h3>Bayar</h3>
+                    <p>Pilih metode pembayaran: Transfer Bank / COD</p>
+                </div>
+                <div class="step">
+                    <div class="step-icon">4</div>
+                    <h3>Selesai</h3>
+                    <p>Konfirmasi pesanan dan tunggu pengiriman</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="pembayaran" class="payment" style="display: none;">
+
+        <div class="container">
+            <h2>Pembayaran</h2>
+            <form id="payment-form">
+                <div class="form-group">
+                    <label>Nama</label>
+                    <input type="text" id="customer-name" required>
+                </div>
+                <div class="form-group">
+                    <label>no.handphone</label>
+                    <input type="tel" id="customer-phone" required>
+                </div>
+                <div class="form-group">
+                    <label>Alamat</label>
+                    <textarea id="customer-address" required></textarea>
+                </div>
+                <div class="form-group">
+                    <label>Metode Pembayaran</label>
+                    <select id="payment-method" required>
+                        <option value="">Pilih...</option>
+                        <option value="transfer">qris all payment</option>
+                        <option value="cod">Bayar di Tempat (COD) / Bayar di kasir</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label>makan dimana nihh</label>
+                    <select id="food place" required>
+                        <option value="">Pilih...</option>
+                        <option value="transfer">take away</option>
+                        <option value="cod">dine in</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label>Membership</label>
+                    <select id="membership-level" required>
+                        <option value="none">Non Member</option>
+                        <option value="silver">Silver (diskon 5%)</option>
+                        <option value="gold">Gold (diskon 8%)</option>
+                      </select>
+                    <div style="margin-top:0.5rem; font-size:0.95rem; color:#666;" id="membership-poin-info"></div>
+                </div>
+
+                <div class="form-group">
+                    <label>Total Bayar: Rp <span id="form-total">0</span></label>
+                </div>
+
+                <div style="font-size: 0.95rem; color: #666; margin-top: 0.75rem;" id="royalty-detail"></div>
+                <div style="font-size: 0.95rem; color: #666; margin-top: 0.25rem;" id="membership-detail"></div>
+
+
+                <!-- QRIS Section (tampil saat payment-method = transfer) -->
+                <div id="qris-container" style="display: none; margin-top: 1rem;">
+                    <div class="form-group" style="margin-bottom: 0.5rem;">
+                        <label>QRIS (Scan untuk pembayaran)</label>
+                        <div style="text-align: center;">
+                            <img
+                                id="qris-image"
+                                src="barcode qris.jpeg"
+                                alt="QRIS"
+                                style="width: 220px; max-width: 100%; border-radius: 12px; border: 1px solid #eee; padding: 10px; background: #fff;" />
+                        </div>
+                        <p style="font-size: 0.95rem; color: #555; margin: 0.75rem 0 0; text-align: center;">
+                            Scan QR di atas menggunakan HP Anda.
+                        </p>
+                    </div>
+                </div>
+
+
+
+
+
+                <button type="submit" class="submit-btn">Konfirmasi Pesanan</button>
+            </form>
+        </div>
+    </section>
+
+
+    <section id="rating" class="cart" style="display:none; padding-top: 40px; padding-bottom: 80px;">
+        <div class="container">
+            <h2>Rate Pesanan</h2>
+            <p style="text-align:center; color:#666; max-width: 700px; margin: 0 auto 1.25rem;">Tulis rating untuk setiap menu (simulasi, disimpan ke perangkat Anda).</p>
+            <div id="rating-grid" style="display:grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 1rem;"></div>
+            <div style="text-align:center; margin-top: 1.5rem;">
+                <button type="button" class="checkout-btn" style="max-width: 420px;" onclick="submitRatings()">Kirim Rating</button>
+            </div>
+        </div>
+    </section>
+
+
+    <section id="confirmation" class="confirmation" style="display: none;">
+        <div class="container">
+            <i class="fas fa-check-circle success-icon"></i>
+            <h2>Pesanan Berhasil!</h2>
+            <p>Terima kasih atas pesanan Anda. Kami akan hubungi segera untuk konfirmasi.</p>
+            <button onclick="location.reload()" class="back-btn">Pesan Lagi</button>
+        </div>
+    </section>
+
+    <section id="maps">
+        <div class="peta">
+            <h2 style="position: center;">Peta lokasi toko warung nasi abah iyus</h2>
+            <iframe
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3960.7866772122907!2d107.6093586!3d-6.916088999999999!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e68e63a9c84454d%3A0x59eb222545f1dc7b!2sAyam%20Goreng%20%26%20Bakar%20ABAH%20IYUS!5e0!3m2!1sid!2sid!4v1776860215488!5m2!1sid!2sid"
+                width="70%" height="500" style="border:0;" allowfullscreen="" loading="lazy"
+                referrerpolicy="no-referrer-when-downgrade"></iframe>
+        </div>
+    </section>
+
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2024 Ayam Goreng Abah Iyus. Semua hak dilindungi. Bandung, Jawa Barat.</p>
+        </div>
+    </footer>
+
+<script src="script (1).js"></script>
+</body>
+
+</html>
